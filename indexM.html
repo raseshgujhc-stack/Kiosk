@@ -1313,6 +1313,9 @@
                 width: 100%;
                 padding: 8px 10px;
                 font-size: 15px;
+                white-space: normal;
+                overflow: visible;
+                text-overflow: unset;
             }
 
             #muteBtn {
@@ -1329,7 +1332,6 @@
             }
 
             .viewer-nav-row .col-4,
-            .viewer-nav-row .col,
             .viewer-nav-row .col-auto {
                 display: flex;
                 align-items: center;
@@ -1337,19 +1339,13 @@
             }
 
             .viewer-nav-row > .col-4 {
-                flex: 0 0 34%;
-                max-width: 34%;
+                flex: 0 0 40%;
+                max-width: 40%;
             }
 
             .viewer-nav-row > .col-auto {
-                flex: 0 0 32%;
-                max-width: 32%;
-            }
-
-            .viewer-nav-row > .col {
-                order: 4;
-                flex: 0 0 100%;
-                max-width: 100%;
+                flex: 0 0 20%;
+                max-width: 20%;
             }
 
             .viewer-nav-row .nav-controls {
@@ -1364,9 +1360,8 @@
                 text-align: center;
             }
 
-            .viewer-nav-row .slide-indicators {
-                width: 100%;
-                justify-content: center;
+            .viewer-nav-row > .col {
+                display: none !important;
             }
 
             .nav-btn {
@@ -1378,6 +1373,10 @@
 
             .slide-counter {
                 min-width: 0;
+            }
+
+            .slide-indicators {
+                display: none !important;
             }
         }
 
