@@ -241,9 +241,13 @@
             .middle-row {
                 display: grid;
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-areas:
+                    "extra staff"
+                    "title title";
                 width: 100%;
                 gap: 12px;
                 margin: 0;
+                align-items: stretch;
             }
 
             .vision-tile {
@@ -274,8 +278,7 @@
 
         @media (max-width:768px) {
             .center-title {
-                grid-column: 1 / -1;
-                order: -1;
+                grid-area: title;
                 width: 100%;
                 letter-spacing: 1px;
                 padding: 10px 14px;
@@ -328,6 +331,9 @@
 
             .middle-row {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-areas:
+                    "extra staff"
+                    "title title";
             }
 
             .vision-tile {
@@ -545,6 +551,14 @@
                 right: 16px;
                 padding: 10px 12px;
                 font-size: 13px;
+            }
+
+            .middle-row>.tile:first-child {
+                grid-area: extra;
+            }
+
+            .middle-row>.tile:last-child {
+                grid-area: staff;
             }
 
             .vision-title {
@@ -911,9 +925,7 @@
 
 <body>
 
-    <video autoplay muted loop id="bgVideo">
-        <source src="video/highcourt.mp4">
-    </video>
+    <img id="bgVideo" src="video/highcourtM.gif" alt="">
 
     <div class="overlay"></div>
 
