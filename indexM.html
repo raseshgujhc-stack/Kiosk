@@ -178,6 +178,43 @@
                 inset -10px 0 18px rgba(112, 79, 18, .1);
         }
 
+        .vision-header {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            grid-template-columns: 84px minmax(0, 1fr);
+            align-items: center;
+            gap: 18px;
+            width: 100%;
+            text-align: center;
+            max-width: 980px;
+            justify-content: center;
+
+        }
+
+        .vision-header-logo {
+            width: 84px;
+            height: 84px;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .18));
+            display: block;
+            justify-self: start;
+            position: static !important;
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            max-width: none !important;
+            max-height: none !important;
+            border-radius: 0;
+            box-shadow: none;
+            animation: none;
+        }
+
+        .vision-header-text {
+            min-width: 0;
+            display: block;
+        }
+
         .vision-tile::before {
             animation-duration: 7s;
         }
@@ -203,10 +240,12 @@
             z-index: 1;
             color: #1d0c84;
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(18px, 2.2vw, 32px);
+            font-size: clamp(18px, 2vw, 28px);
             letter-spacing: 1px;
             line-height: 1.2;
             font-weight: 800;
+            text-align: left;
+            width: 100%;
            /* text-shadow:
                 0 -1px 0 rgba(255, 244, 217, .62),
                 0 1px 0 rgba(138, 92, 18, .36),
@@ -248,6 +287,31 @@
                 min-height: 0;
                 padding: 22px 18px;
                 gap: 10px;
+            }
+
+            .vision-header {
+                display: grid;
+                grid-template-columns: 46px minmax(0, 1fr);
+                align-items: center;
+                gap: 10px;
+                text-align: left;
+                max-width: none;
+            }
+
+            .vision-header-logo {
+                width: 46px;
+                height: 46px;
+            }
+
+            .vision-header-text {
+                width: 100%;
+                min-width: 0;
+                display: block;
+            }
+
+            .vision-title {
+                text-align: left;
+                font-size: clamp(18px, 5.4vw, 24px);
             }
         }
 
@@ -1693,7 +1757,12 @@
             <div class="row hero-row justify-content-center home-stack">
                 <div class="col-12">
                     <div class="tile vision-tile" data-autoplay="false" onclick="openVisionDocument(this)">
-                        <div class="vision-title">eGujHC Vision Document</div>
+                        <div class="vision-header">
+                            <img class="vision-header-logo" src="assets/icon.png" alt="High Court of Gujarat">
+                            <div class="vision-header-text">
+                                <div class="vision-title">eGujHC Vision Document</div>
+                            </div>
+                        </div>
                         <div class="vision-subtitle">Released By Hon'ble Mr. Justice Surya Kant, Judge Supreme Court Of India</div>
                         <div class="vision-date">On the date 07th December, 2024</div>
                     </div>
