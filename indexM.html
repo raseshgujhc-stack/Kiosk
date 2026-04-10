@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gujarat High Court Digital Kiosk</title>
 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap"
         rel="stylesheet">
 
@@ -114,7 +115,7 @@
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 align-content: start;
                 justify-content: stretch;
-                padding: 198px 16px 28px;
+                padding: 84px 16px 28px;
                 gap: 14px;
                 overflow-y: auto;
                 overflow-x: hidden;
@@ -141,6 +142,11 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 2vw;
+            width: 90%;
+            max-width: 1400px;
+        }
+
+        .module-grid {
             width: 90%;
             max-width: 1400px;
         }
@@ -234,17 +240,7 @@
         }
 
         @media (max-width:768px) {
-            .row {
-                display: contents;
-            }
-
-            .middle-row {
-                display: contents;
-            }
-
             .vision-tile {
-                grid-column: 1 / -1;
-                order: 2;
                 width: 100% !important;
                 max-width: 100%;
                 min-width: 100%;
@@ -272,8 +268,6 @@
 
         @media (max-width:768px) {
             .center-title {
-                grid-column: 1 / -1;
-                order: 1;
                 width: 100%;
                 letter-spacing: 1px;
                 padding: 10px 14px;
@@ -494,7 +488,6 @@
 
         @media (max-width:768px) {
             .tile {
-                order: 10;
                 width: 100%;
                 height: 136px;
                 border-radius: 18px;
@@ -526,9 +519,12 @@
             }
 
             .logo-tile {
-                top: 24px;
-                left: 50%;
-                transform: translateX(-50%);
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                grid-column: 1 / -1;
+                margin: 0 auto;
                 width: 74px;
                 height: 74px;
                 border-radius: 18px;
@@ -541,18 +537,12 @@
                 font-size: 13px;
             }
 
-            .tile[onclick*="openModule('extra'"] { order: 3; }
-            .tile[onclick*="openModule('iris'"] { order: 4; }
-            .tile[onclick*="openModule('cts'"] { order: 5; }
-            .tile[onclick*="openModule('mact'"] { order: 6; }
-            .tile[onclick*="openModule('judges'"] { order: 7; }
-            .tile[onclick*="openModule('email'"] { order: 8; }
-            .tile[onclick*="openModule('payroll'"] { order: 9; }
-            .tile[onclick*="openModule('fts'"] { order: 10; }
-            .tile[onclick*="openModule('ecopy'"] { order: 11; }
-            .tile[onclick*="openModule('allocation'"] { order: 12; }
-            .tile[onclick*="openModule('njdg'"] { order: 13; }
-            .tile[onclick*="openModule('staff'"] { order: 14; }
+            .module-grid {
+                width: 100%;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+                margin: 0;
+            }
 
             .vision-title {
                 font-size: clamp(18px, 5vw, 24px);
@@ -646,6 +636,179 @@
             .slide-counter {
                 font-size: 13px;
                 margin: 0;
+            }
+        }
+
+        @media (max-width:1024px), (orientation:landscape) and (max-height:700px) {
+            #home {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                align-content: start;
+                justify-content: stretch;
+                padding: 84px 16px 28px;
+                gap: 14px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .vision-tile,
+            .center-title,
+            .module-grid {
+                grid-column: 1 / -1;
+                width: 100% !important;
+                max-width: 100%;
+            }
+
+            .logo-tile {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                grid-column: 1 / -1;
+                margin: 0 auto;
+                width: 74px !important;
+                max-width: 74px;
+                min-width: 74px;
+                height: 74px;
+            }
+
+            .vision-tile {
+                margin: 6px 0 0;
+                min-width: 100%;
+                min-height: 0;
+                padding: 22px 18px;
+                gap: 10px;
+            }
+
+            .center-title {
+                padding: 10px 14px;
+                letter-spacing: 1px;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .module-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+                margin: 0;
+            }
+        }
+
+        @media (orientation:landscape) and (max-height:700px) {
+            #home {
+                padding: 72px 16px 20px;
+                gap: 12px;
+            }
+
+            .logo-tile {
+                width: 60px;
+                max-width: 60px;
+                min-width: 60px;
+                height: 60px;
+                border-radius: 16px;
+            }
+
+            .autoplay-btn {
+                top: 12px;
+                right: 12px;
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+
+            .vision-tile {
+                padding: 16px 18px;
+            }
+
+            .vision-title {
+                font-size: clamp(18px, 2.2vw, 28px);
+            }
+
+            .vision-subtitle,
+            .vision-date {
+                font-size: 13px;
+                line-height: 1.35;
+            }
+
+            .center-title {
+                font-size: clamp(20px, 3.2vw, 34px);
+                padding: 8px 12px;
+            }
+
+            .module-grid {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+
+            .tile {
+                height: 148px;
+            }
+
+            .tile img {
+                max-width: 58%;
+                max-height: 58%;
+            }
+
+            .tile-label {
+                min-height: 40px;
+                font-size: 12px;
+                padding: 7px 8px;
+            }
+
+            #features {
+                top: 70px;
+                bottom: 78px;
+            }
+
+            .feature {
+                padding: 8px 12px 12px;
+                gap: 10px;
+            }
+
+            .feature img,
+            .feature video {
+                width: auto;
+                max-width: min(62vw, 720px);
+                max-height: 42vh;
+            }
+
+            .caption {
+                max-width: min(62vw, 720px);
+                padding: 10px 12px;
+                font-size: 12px;
+                line-height: 1.35;
+            }
+
+            .back,
+            #muteBtn {
+                top: 8px !important;
+                padding: 8px 10px !important;
+                font-size: 12px !important;
+            }
+
+            .module-heading {
+                top: 8px;
+                width: auto;
+                max-width: calc(100vw - 180px);
+                padding: 8px 18px;
+                font-size: 16px;
+            }
+
+            .nav-controls {
+                bottom: 8px;
+                width: auto;
+                max-width: calc(100vw - 24px);
+                flex-wrap: nowrap;
+                gap: 10px;
+            }
+
+            .slide-indicators {
+                order: 0;
+                width: auto;
+                padding: 6px 10px;
+            }
+
+            .slide-counter {
+                font-size: 12px;
             }
         }
 
@@ -997,6 +1160,188 @@
                 box-shadow: 0 10px 30px rgba(0, 0, 0, .3), inset 0 1px 1px rgba(255, 255, 255, .6);
             }
         }
+
+        /* Bootstrap mobile home layout */
+        #home {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: block;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0;
+        }
+
+        .home-shell {
+            position: relative;
+            z-index: 1;
+            min-height: 100%;
+            padding: 90px 12px 24px;
+        }
+
+        .home-stack {
+            max-width: 1080px;
+            margin: 0 auto 14px;
+        }
+
+        .home-shell .row {
+            display: flex;
+            flex-wrap: wrap;
+            width: auto;
+            max-width: none;
+            gap: 0;
+        }
+
+        .home-shell .logo-row,
+        .home-shell .hero-row {
+            --bs-gutter-x: 0;
+            --bs-gutter-y: 0;
+        }
+
+        .home-shell .module-grid-bs {
+            display: flex;
+            flex-wrap: wrap;
+            --bs-gutter-x: 12px;
+            --bs-gutter-y: 12px;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .home-shell .module-grid-bs>[class*="col-"] {
+            display: flex;
+        }
+
+        .logo-tile {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            width: 92px;
+            height: 92px;
+            margin: 0 auto;
+        }
+
+        .vision-tile {
+            width: 100% !important;
+            max-width: none;
+            min-width: 0;
+            min-height: 0;
+            margin: 0;
+            padding: 18px 18px;
+            gap: 10px;
+        }
+
+        .center-title {
+            width: 100%;
+            margin: 0;
+            padding: 10px 14px;
+            font-size: clamp(24px, 5vw, 40px);
+            letter-spacing: 1px;
+            white-space: normal;
+            text-align: center;
+        }
+
+        .module-grid-bs .tile {
+            width: 100%;
+            height: 150px;
+            margin: 0;
+        }
+
+        .module-grid-bs .tile-label {
+            min-height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 10px;
+            font-size: 13px;
+            line-height: 1.2;
+            letter-spacing: .2px;
+        }
+
+        .module-grid-bs .tile img {
+            max-width: 64%;
+            max-height: 60%;
+        }
+
+        .autoplay-btn {
+            top: 14px;
+            right: 12px;
+            padding: 10px 14px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 767.98px) {
+            .home-shell {
+                padding-top: 88px;
+            }
+
+            .logo-tile {
+                width: 86px;
+                height: 86px;
+            }
+
+            .vision-title {
+                font-size: clamp(18px, 6vw, 26px);
+            }
+
+            .vision-subtitle,
+            .vision-date {
+                font-size: 15px;
+                line-height: 1.45;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .home-shell {
+                padding: 72px 16px 20px;
+            }
+
+            .logo-tile {
+                width: 72px;
+                height: 72px;
+            }
+
+            .vision-tile {
+                padding: 16px 18px;
+            }
+
+            .vision-title {
+                font-size: clamp(18px, 3vw, 28px);
+            }
+
+            .vision-subtitle,
+            .vision-date {
+                font-size: 13px;
+                line-height: 1.35;
+            }
+
+            .center-title {
+                font-size: clamp(20px, 3.2vw, 34px);
+                padding: 8px 12px;
+            }
+
+            .module-grid-bs .tile {
+                height: 150px;
+            }
+
+            .module-grid-bs .tile img {
+                max-width: 64%;
+                max-height: 60%;
+            }
+
+            .module-grid-bs .tile-label {
+                min-height: 42px;
+                font-size: 13px;
+                padding: 8px 10px;
+            }
+
+            .autoplay-btn {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 
@@ -1014,90 +1359,115 @@
 
         <div id="autoplayBtn" class="autoplay-btn" onclick="toggleAutoplay(event)">▶ AUTOPLAY</div>
 
-        <div class="logo-tile" onclick="handleLogoClick()">
-            <img src="assets/emblem.png">
-        </div>
-
-        <div class="tile vision-tile" data-autoplay="false" onclick="openVisionDocument(this)">
-            <div class="vision-title">eGujHC Vision Document</div>
-            <div class="vision-subtitle">Released By Hon'ble Mr. Justice Surya Kant, Judge Supreme Court Of India</div>
-            <div class="vision-date">On the date 07th December, 2024</div>
-        </div>
-
-        <div class="row">
-
-            <div class="tile" onclick="openModule('iris',this)">
-                <img src="modules/iris/icon.jpeg">
-                <div class="tile-label">IRIS</div>
+        <div class="container-fluid home-shell">
+            <div class="row logo-row justify-content-center home-stack">
+                <div class="col-12 text-center">
+                    <div class="logo-tile" onclick="handleLogoClick()">
+                        <img src="assets/emblem.png">
+                    </div>
+                </div>
             </div>
 
-            <div class="tile" onclick="openModule('cts',this)">
-                <img src="modules/cts/icon.jpeg">
-                <div class="tile-label">Case Tracking</div>
+            <div class="row hero-row justify-content-center home-stack">
+                <div class="col-12">
+                    <div class="tile vision-tile" data-autoplay="false" onclick="openVisionDocument(this)">
+                        <div class="vision-title">eGujHC Vision Document</div>
+                        <div class="vision-subtitle">Released By Hon'ble Mr. Justice Surya Kant, Judge Supreme Court Of India</div>
+                        <div class="vision-date">On the date 07th December, 2024</div>
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="center-title">
+                        INDIGENOUSLY DEVELOPED SOFTWARE
+                    </div>
+                </div>
             </div>
 
-            <div class="tile" onclick="openModule('mact',this)">
-                <img src="modules/mact/icon.jpeg">
-                <div class="tile-label">SARAS N.I. Court</div>
+            <div class="row row-cols-2 row-cols-md-5 justify-content-center module-grid-bs">
+                <div class="col">
+                    <div class="tile" onclick="openModule('extra',this)">
+                        <img src="modules/extra/icon.jpeg">
+                        <div class="tile-label">JO Portal</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('iris',this)">
+                        <img src="modules/iris/icon.jpeg">
+                        <div class="tile-label">IRIS</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('cts',this)">
+                        <img src="modules/cts/icon.jpeg">
+                        <div class="tile-label">Case Tracking</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('mact',this)">
+                        <img src="modules/mact/icon.jpeg">
+                        <div class="tile-label">SARAS N.I. Court</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('judges',this)">
+                        <img src="modules/judges/icon.jpeg">
+                        <div class="tile-label">Judges Dashboard</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('email',this)">
+                        <img src="modules/email/icon.jpeg">
+                        <div class="tile-label">Email My Case Status E.M.C.S.</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('payroll',this)">
+                        <img src="modules/payroll/icon.jpeg">
+                        <div class="tile-label">Payroll Management System</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('fts',this)">
+                        <img src="modules/fts/icon.jpeg">
+                        <div class="tile-label">Interdepartmental File Exchange</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('ecopy',this)">
+                        <img src="modules/ecopy/icon.jpeg">
+                        <div class="tile-label">E Certified Copy</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('allocation',this)">
+                        <img src="modules/allocation/icon.jpeg">
+                        <div class="tile-label">Autolisting</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('njdg',this)">
+                        <img src="modules/njdg/icon.jpeg">
+                        <div class="tile-label">Daily NJDG Alert(D.N.A.)</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="tile" onclick="openModule('staff',this)">
+                        <img src="modules/staff/icon.jpeg">
+                        <div class="tile-label">Staff Portal</div>
+                    </div>
+                </div>
             </div>
-
-            <div class="tile" onclick="openModule('judges',this)">
-                <img src="modules/judges/icon.jpeg">
-                <div class="tile-label">Judges Dashboard</div>
-            </div>
-
-            <div class="tile" onclick="openModule('email',this)">
-                <img src="modules/email/icon.jpeg">
-                <div class="tile-label">Email My Case Status E.M.C.S.</div>
-            </div>
-
-        </div>
-
-        <div class="middle-row">
-
-            <div class="tile" onclick="openModule('extra',this)">
-                <img src="modules/extra/icon.jpeg">
-                <div class="tile-label">JO Portal</div>
-            </div>
-
-            <div class="center-title">
-                INDIGENOUSLY DEVELOPED SOFTWARE
-            </div>
-
-            <div class="tile" onclick="openModule('staff',this)">
-                <img src="modules/staff/icon.jpeg">
-                <div class="tile-label">Staff Portal</div>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="tile" onclick="openModule('payroll',this)">
-                <img src="modules/payroll/icon.jpeg">
-                <div class="tile-label">Payroll Management System</div>
-            </div>
-
-            <div class="tile" onclick="openModule('fts',this)">
-                <img src="modules/fts/icon.jpeg">
-                <div class="tile-label">Interdepartmental File Exchange</div>
-            </div>
-
-            <div class="tile" onclick="openModule('ecopy',this)">
-                <img src="modules/ecopy/icon.jpeg">
-                <div class="tile-label">E Certified Copy</div>
-            </div>
-
-            <div class="tile" onclick="openModule('allocation',this)">
-                <img src="modules/allocation/icon.jpeg">
-                <div class="tile-label">Autolisting</div>
-            </div>
-
-            <div class="tile" onclick="openModule('njdg',this)">
-                <img src="modules/njdg/icon.jpeg">
-                <div class="tile-label">Daily NJDG Alert(D.N.A.)</div>
-            </div>
-
         </div>
 
     </div>
