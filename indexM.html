@@ -882,6 +882,17 @@
             align-items: center;
         }
 
+        .viewer-toolbar,
+        .viewer-nav-row {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .viewer-heading-col {
+            display: flex;
+            justify-content: center;
+        }
+
         .feature {
             position: absolute;
             top: 0;
@@ -1052,6 +1063,10 @@
             justify-content: center;
             width: 100%;
             pointer-events: auto;
+        }
+
+        .viewer-nav-row .nav-controls {
+            display: contents;
         }
 
         .nav-btn {
@@ -1268,12 +1283,9 @@
                 --bs-gutter-x: 8px;
             }
 
-            .viewer-top .col {
-                flex: 1 1 0;
-            }
-
-            .viewer-top .col-auto {
-                flex: 0 0 auto;
+            .viewer-toolbar,
+            .viewer-nav-row {
+                --bs-gutter-x: 6px;
             }
 
             .module-heading {
@@ -1292,10 +1304,12 @@
                 padding: 0 8px 10px;
             }
 
-            .nav-controls {
-                width: 100%;
-                max-width: 100%;
-                gap: 6px;
+            .viewer-nav-row .col-4,
+            .viewer-nav-row .col,
+            .viewer-nav-row .col-auto {
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
 
@@ -1700,14 +1714,14 @@
     <div id="viewer">
         <div class="container-fluid viewer-shell">
             <div class="viewer-top">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-auto">
+                <div class="row viewer-toolbar justify-content-between align-items-center">
+                    <div class="col-3 col-md-auto">
                         <div class="back" onclick="goHome()">← Back</div>
                     </div>
-                    <div class="col text-center">
+                    <div class="col-6 col-md viewer-heading-col">
                         <div id="moduleHeading" class="module-heading"></div>
                     </div>
-                    <div class="col-auto text-end">
+                    <div class="col-3 col-md-auto text-end">
                         <div id="muteBtn" onclick="toggleMute()" style="background:#111; color:white; padding:10px 15px; border-radius:8px; cursor:pointer; z-index:100; display:inline-flex; align-items:center; justify-content:center; pointer-events:auto;">
                             🔊 MUTE
                         </div>
@@ -1716,12 +1730,24 @@
             </div>
 
             <div class="viewer-bottom">
-                <div class="row justify-content-center">
-                    <div class="col-12">
+                <div class="row viewer-nav-row justify-content-center align-items-center">
+                    <div class="col-4 col-md-auto">
                         <div class="nav-controls">
                             <button class="nav-btn" id="prevBtn" onclick="previousSlide()">← Previous</button>
+                        </div>
+                    </div>
+                    <div class="col col-md-auto">
+                        <div class="nav-controls">
                             <div class="slide-indicators" id="indicators"></div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="nav-controls">
                             <div class="slide-counter"><span id="currentSlide">1</span>/<span id="totalSlides">1</span></div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-auto">
+                        <div class="nav-controls">
                             <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Next →</button>
                         </div>
                     </div>
