@@ -882,14 +882,14 @@
             align-items: center;
         }
 
-        .viewer-toolbar,
+        .viewer-toolbar-main,
+        .viewer-title-row,
         .viewer-nav-row {
             max-width: 1180px;
             margin: 0 auto;
         }
 
-        .viewer-heading-col {
-            display: flex;
+        .viewer-title-row {
             justify-content: center;
         }
 
@@ -1065,10 +1065,6 @@
             pointer-events: auto;
         }
 
-        .viewer-nav-row .nav-controls {
-            display: contents;
-        }
-
         .nav-btn {
             background: #2B2929;
             color: white;
@@ -1180,7 +1176,7 @@
             }
 
             .module-heading {
-                max-width: calc(100vw - 240px);
+                max-width: min(90vw, 420px);
                 padding: 10px 18px;
                 font-size: clamp(16px, 2.6vw, 24px);
                 white-space: nowrap;
@@ -1189,8 +1185,8 @@
             }
 
             .nav-controls {
-                width: calc(100vw - 16px);
-                max-width: calc(100vw - 16px);
+                width: 100%;
+                max-width: 100%;
                 gap: 8px;
                 justify-content: center;
                 flex-wrap: nowrap;
@@ -1276,7 +1272,7 @@
 
         @media (max-width: 767.98px) {
             #features {
-                top: 132px;
+                top: 154px;
                 bottom: 86px;
             }
 
@@ -1288,45 +1284,28 @@
                 --bs-gutter-x: 8px;
             }
 
-            .viewer-toolbar,
+            .viewer-toolbar-main,
+            .viewer-title-row,
             .viewer-nav-row {
                 --bs-gutter-x: 6px;
             }
 
-            .viewer-toolbar {
+            .viewer-toolbar-main .col-6 {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
                 align-items: center;
-                row-gap: 8px;
             }
 
-            .viewer-toolbar > .col-3 {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-
-            .viewer-toolbar > .col-3:first-child {
-                display: flex;
-                justify-content: flex-start;
-            }
-
-            .viewer-toolbar > .col-3.text-end {
-                display: flex;
+            .viewer-toolbar-main .text-end {
                 justify-content: flex-end;
             }
 
-            .viewer-heading-col {
-                order: 3;
-                flex: 0 0 100%;
-                max-width: 100%;
-                display: flex;
-                justify-content: center;
+            .viewer-title-row {
+                margin-top: 8px;
             }
 
             .module-heading {
                 max-width: none;
-                width: min(100%, 220px);
+                width: 100%;
                 padding: 8px 10px;
                 font-size: 15px;
                 white-space: normal;
@@ -1346,28 +1325,14 @@
             }
 
             .viewer-nav-row {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: space-between;
                 row-gap: 8px;
             }
 
-            .viewer-nav-row .col-4,
-            .viewer-nav-row .col-auto {
+            .viewer-nav-row .col-5,
+            .viewer-nav-row .col-2 {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-            }
-
-            .viewer-nav-row > .col-4 {
-                flex: 0 0 40%;
-                max-width: 40%;
-            }
-
-            .viewer-nav-row > .col-auto {
-                flex: 0 0 20%;
-                max-width: 20%;
             }
 
             .viewer-nav-row .nav-controls {
@@ -1384,13 +1349,13 @@
                 text-align: center;
             }
 
-            .viewer-nav-row > .col {
+            .viewer-nav-row .viewer-indicators-col {
                 display: none !important;
             }
 
             .nav-btn {
                 min-width: 0;
-                width: calc(100% - 4px);
+                width: 100%;
                 padding: 8px 6px;
                 font-size: 12px;
             }
@@ -1806,39 +1771,41 @@
     <div id="viewer">
         <div class="container-fluid viewer-shell">
             <div class="viewer-top">
-                <div class="row viewer-toolbar justify-content-between align-items-center">
-                    <div class="col-3 col-md-auto">
+                <div class="row viewer-toolbar-main justify-content-between align-items-center">
+                    <div class="col-6 col-md-auto">
                         <div class="back" onclick="goHome()">← Back</div>
                     </div>
-                    <div class="col-6 col-md viewer-heading-col">
-                        <div id="moduleHeading" class="module-heading"></div>
-                    </div>
-                    <div class="col-3 col-md-auto text-end">
+                    <div class="col-6 col-md-auto text-end">
                         <div id="muteBtn" onclick="toggleMute()" style="background:#111; color:white; padding:10px 15px; border-radius:8px; cursor:pointer; z-index:100; display:inline-flex; align-items:center; justify-content:center; pointer-events:auto;">
                             🔊 MUTE
                         </div>
+                    </div>
+                </div>
+                <div class="row viewer-title-row">
+                    <div class="col-12 col-md-auto">
+                        <div id="moduleHeading" class="module-heading"></div>
                     </div>
                 </div>
             </div>
 
             <div class="viewer-bottom">
                 <div class="row viewer-nav-row justify-content-center align-items-center">
-                    <div class="col-4 col-md-auto">
+                    <div class="col-5 col-md-auto">
                         <div class="nav-controls">
                             <button class="nav-btn" id="prevBtn" onclick="previousSlide()">← Previous</button>
                         </div>
                     </div>
-                    <div class="col col-md-auto">
+                    <div class="col-12 col-md-auto viewer-indicators-col">
                         <div class="nav-controls">
                             <div class="slide-indicators" id="indicators"></div>
                         </div>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-2 col-md-auto">
                         <div class="nav-controls">
                             <div class="slide-counter"><span id="currentSlide">1</span>/<span id="totalSlides">1</span></div>
                         </div>
                     </div>
-                    <div class="col-4 col-md-auto">
+                    <div class="col-5 col-md-auto">
                         <div class="nav-controls">
                             <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Next →</button>
                         </div>
