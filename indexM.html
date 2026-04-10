@@ -1288,6 +1288,26 @@
                 --bs-gutter-x: 6px;
             }
 
+            .viewer-toolbar {
+                row-gap: 8px;
+            }
+
+            .viewer-toolbar > .col-3 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .viewer-toolbar > .col-3.text-end {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .viewer-heading-col {
+                order: 3;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
             .module-heading {
                 max-width: none;
                 width: 100%;
@@ -1304,12 +1324,60 @@
                 padding: 0 8px 10px;
             }
 
+            .viewer-nav-row {
+                row-gap: 8px;
+            }
+
             .viewer-nav-row .col-4,
             .viewer-nav-row .col,
             .viewer-nav-row .col-auto {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+            }
+
+            .viewer-nav-row > .col-4 {
+                flex: 0 0 34%;
+                max-width: 34%;
+            }
+
+            .viewer-nav-row > .col-auto {
+                flex: 0 0 32%;
+                max-width: 32%;
+            }
+
+            .viewer-nav-row > .col {
+                order: 4;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .viewer-nav-row .nav-controls {
+                width: 100%;
+                max-width: 100%;
+                gap: 6px;
+            }
+
+            .viewer-nav-row .slide-counter {
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+            }
+
+            .viewer-nav-row .slide-indicators {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-btn {
+                min-width: 0;
+                width: 100%;
+                padding: 8px 6px;
+                font-size: 12px;
+            }
+
+            .slide-counter {
+                min-width: 0;
             }
         }
 
@@ -1586,7 +1654,7 @@
 
 <body>
 
-    <img id="bgVideo" src="video/highcourtM.gif" alt="">
+    <img id="bgVideo" src="video/highcourt.png" alt="">
 
     <div class="overlay"></div>
 
