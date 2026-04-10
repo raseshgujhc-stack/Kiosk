@@ -111,7 +111,7 @@
         @media (max-width:768px) {
             #home {
                 justify-content: flex-start;
-                padding: 132px 16px 28px;
+                padding: 164px 16px 28px;
                 gap: 14px;
                 overflow-y: auto;
                 overflow-x: hidden;
@@ -540,9 +540,11 @@
             }
 
             .logo-tile {
-                top: 18px;
-                width: 84px;
-                height: 84px;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 88px;
+                height: 88px;
                 border-radius: 20px;
             }
 
@@ -569,6 +571,78 @@
             .vision-date {
                 font-size: 15px;
                 line-height: 1.45;
+            }
+
+            .feature {
+                justify-content: flex-start;
+                padding: 108px 12px 116px;
+            }
+
+            .feature img,
+            .feature video {
+                width: 100%;
+                height: auto;
+                max-height: 52vh;
+                border-radius: 12px;
+            }
+
+            .caption {
+                position: static;
+                width: 100%;
+                margin-top: 14px;
+                padding: 14px 16px;
+                font-size: 15px;
+                line-height: 1.45;
+                max-height: 24vh;
+            }
+
+            .back,
+            #muteBtn {
+                top: 14px !important;
+                padding: 10px 12px !important;
+                font-size: 13px !important;
+            }
+
+            .back {
+                left: 12px;
+            }
+
+            #muteBtn {
+                right: 12px !important;
+            }
+
+            .module-heading {
+                top: 58px;
+                width: calc(100vw - 24px);
+                max-width: calc(100vw - 24px);
+                padding: 10px 14px;
+                font-size: 18px;
+            }
+
+            .nav-controls {
+                bottom: 12px;
+                width: calc(100vw - 24px);
+                gap: 8px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .nav-btn {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+
+            .slide-indicators {
+                gap: 6px;
+                padding: 8px 12px;
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .slide-counter {
+                font-size: 13px;
+                margin: 0;
             }
         }
 
@@ -1108,7 +1182,7 @@ border-radius:8px; cursor:pointer; z-index:100;">
                 audio: "modules/mact/narration.mp3",
                 videoControls: true,
                 features: [
-                    { video: "modules/mact/demo.mp4", text: "SARAS N.I. Court" }
+                    { img: "modules/mact/demo.gif", text: "SARAS N.I. Court" }
                 ]
             },
             judges: { // Judges Community
