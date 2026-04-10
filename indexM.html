@@ -1275,6 +1275,11 @@
         }
 
         @media (max-width: 767.98px) {
+            #features {
+                top: 132px;
+                bottom: 86px;
+            }
+
             .viewer-top {
                 padding: 10px 10px 0;
             }
@@ -1289,12 +1294,21 @@
             }
 
             .viewer-toolbar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
                 row-gap: 8px;
             }
 
             .viewer-toolbar > .col-3 {
                 flex: 0 0 50%;
                 max-width: 50%;
+            }
+
+            .viewer-toolbar > .col-3:first-child {
+                display: flex;
+                justify-content: flex-start;
             }
 
             .viewer-toolbar > .col-3.text-end {
@@ -1306,16 +1320,20 @@
                 order: 3;
                 flex: 0 0 100%;
                 max-width: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             .module-heading {
                 max-width: none;
-                width: 100%;
+                width: min(100%, 220px);
                 padding: 8px 10px;
                 font-size: 15px;
                 white-space: normal;
                 overflow: visible;
                 text-overflow: unset;
+                line-height: 1.2;
+                margin: 0 auto;
             }
 
             #muteBtn {
@@ -1328,6 +1346,10 @@
             }
 
             .viewer-nav-row {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
                 row-gap: 8px;
             }
 
@@ -1355,7 +1377,9 @@
             }
 
             .viewer-nav-row .slide-counter {
+                display: flex;
                 justify-content: center;
+                align-items: center;
                 width: 100%;
                 text-align: center;
             }
@@ -1366,13 +1390,14 @@
 
             .nav-btn {
                 min-width: 0;
-                width: 100%;
+                width: calc(100% - 4px);
                 padding: 8px 6px;
                 font-size: 12px;
             }
 
             .slide-counter {
                 min-width: 0;
+                font-size: 13px;
             }
 
             .slide-indicators {
