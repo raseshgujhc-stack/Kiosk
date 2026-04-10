@@ -1112,10 +1112,10 @@
         @media (max-width: 1024px) {
             #features {
                 position: absolute;
-                top: 82px;
+                top: 96px;
                 left: 0;
                 right: 0;
-                bottom: 92px;
+                bottom: 96px;
             }
 
             .feature {
@@ -1174,17 +1174,17 @@
             }
 
             .nav-controls {
-                width: calc(100vw - 20px);
-                max-width: calc(100vw - 20px);
-                gap: 10px;
+                width: calc(100vw - 16px);
+                max-width: calc(100vw - 16px);
+                gap: 8px;
                 justify-content: center;
                 flex-wrap: nowrap;
             }
 
             .nav-btn {
-                min-width: 112px;
-                padding: 10px 14px;
-                font-size: 15px;
+                min-width: 92px;
+                padding: 8px 10px;
+                font-size: 13px;
                 white-space: nowrap;
                 line-height: 1.1;
             }
@@ -1192,21 +1192,23 @@
             .slide-indicators {
                 flex: 1 1 auto;
                 min-width: 0;
-                gap: 6px;
-                padding: 8px 10px;
+                gap: 4px;
+                padding: 6px 8px;
                 justify-content: center;
                 overflow: hidden;
             }
 
             .indicator {
-                width: 11px;
-                height: 11px;
+                width: 8px;
+                height: 8px;
             }
 
             .slide-counter {
                 margin: 0;
                 white-space: nowrap;
-                font-size: 13px;
+                font-size: 12px;
+                min-width: 40px;
+                text-align: center;
             }
         }
 
@@ -1254,6 +1256,46 @@
             .indicator {
                 width: 10px;
                 height: 10px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .viewer-top {
+                padding: 10px 10px 0;
+            }
+
+            .viewer-top .row {
+                --bs-gutter-x: 8px;
+            }
+
+            .viewer-top .col {
+                flex: 1 1 0;
+            }
+
+            .viewer-top .col-auto {
+                flex: 0 0 auto;
+            }
+
+            .module-heading {
+                max-width: none;
+                width: 100%;
+                padding: 8px 10px;
+                font-size: 15px;
+            }
+
+            #muteBtn {
+                padding: 8px 10px !important;
+                font-size: 12px !important;
+            }
+
+            .viewer-bottom {
+                padding: 0 8px 10px;
+            }
+
+            .nav-controls {
+                width: 100%;
+                max-width: 100%;
+                gap: 6px;
             }
         }
 
