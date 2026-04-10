@@ -877,6 +877,8 @@
 
         .viewer-top .row,
         .viewer-bottom .row {
+            display: flex;
+            flex-wrap: wrap;
             --bs-gutter-x: 12px;
             --bs-gutter-y: 12px;
             align-items: center;
@@ -891,6 +893,13 @@
 
         .viewer-title-row {
             justify-content: center;
+        }
+
+        .viewer-toolbar-main > [class*="col-"],
+        .viewer-title-row > [class*="col-"],
+        .viewer-nav-row > [class*="col-"] {
+            display: flex;
+            align-items: center;
         }
 
         .feature {
@@ -1273,7 +1282,7 @@
         @media (max-width: 767.98px) {
             #features {
                 top: 154px;
-                bottom: 86px;
+                bottom: 92px;
             }
 
             .viewer-top {
@@ -1295,24 +1304,30 @@
                 align-items: center;
             }
 
+            .viewer-toolbar-main .col-6:first-child {
+                justify-content: flex-start;
+            }
+
             .viewer-toolbar-main .text-end {
                 justify-content: flex-end;
             }
 
             .viewer-title-row {
                 margin-top: 8px;
+                justify-content: center;
             }
 
             .module-heading {
                 max-width: none;
-                width: 100%;
-                padding: 8px 10px;
+                width: min(100%, 260px);
+                padding: 8px 12px;
                 font-size: 15px;
                 white-space: normal;
                 overflow: visible;
                 text-overflow: unset;
                 line-height: 1.2;
                 margin: 0 auto;
+                text-align: center;
             }
 
             #muteBtn {
@@ -1326,6 +1341,7 @@
 
             .viewer-nav-row {
                 row-gap: 8px;
+                justify-content: space-between;
             }
 
             .viewer-nav-row .col-5,
@@ -1333,6 +1349,14 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+            }
+
+            .viewer-nav-row .col-5:first-child {
+                justify-content: flex-start;
+            }
+
+            .viewer-nav-row .col-5:last-child {
+                justify-content: flex-end;
             }
 
             .viewer-nav-row .nav-controls {
@@ -1356,6 +1380,7 @@
             .nav-btn {
                 min-width: 0;
                 width: 100%;
+                max-width: 112px;
                 padding: 8px 6px;
                 font-size: 12px;
             }
@@ -1363,6 +1388,7 @@
             .slide-counter {
                 min-width: 0;
                 font-size: 13px;
+                margin: 0 auto;
             }
 
             .slide-indicators {
