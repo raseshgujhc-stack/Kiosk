@@ -176,9 +176,9 @@
             border-left: 1px solid rgba(255, 255, 255, .2);
             border-right: 1px solid rgba(128, 91, 20, .16);
             border-bottom: 1px solid rgba(128, 91, 20, .22);
-            box-shadow:
+            /*box-shadow:
                 inset 0 1px 0 rgba(255, 255, 255, .3),
-                inset 0 -1px 0 rgba(97, 64, 6, .16);
+                inset 0 -1px 0 rgba(97, 64, 6, .16);*/
             pointer-events: none;
             z-index: 0;
         }
@@ -186,33 +186,33 @@
         .vision-title {
             position: relative;
             z-index: 1;
-            color: #2a2df8;
+            color: #1d0c84;
             font-family: 'Poppins', sans-serif;
             font-size: clamp(18px, 2.2vw, 32px);
             letter-spacing: 1px;
             line-height: 1.2;
-            font-weight: 700;
-            text-shadow:
-                0 -1px 0 rgba(22, 54, 236, 0.62),
+            font-weight: 800;
+           /* text-shadow:
+                0 -1px 0 rgba(255, 244, 217, .62),
                 0 1px 0 rgba(138, 92, 18, .36),
                 0 2px 0 rgba(77, 48, 0, .22),
-                0 8px 18px rgba(70, 43, 0, .12);
+                0 8px 18px rgba(70, 43, 0, .12);*/
         }
 
         .vision-subtitle,
         .vision-date {
             position: relative;
             z-index: 1;
-            color: rgba(7, 64, 250, 0.932);
-            font-size: clamp(12px, 1.05vw, 18px);
-            font-weight: 600;
+            color:#1d0c84;
+            font-size: 20px;
+            font-weight: 700;
             letter-spacing: .4px;
             line-height: 1.35;
-            text-shadow:
+           /* text-shadow:
                 0 -1px 0 rgba(255, 247, 228, .44),
                 0 1px 0 rgba(123, 81, 16, .22),
                 0 2px 0 rgba(74, 45, 0, .14),
-                0 6px 10px rgba(48, 29, 0, .08);
+                0 6px 10px rgba(48, 29, 0, .08);*/
         }
 
         .middle-row {
@@ -533,8 +533,10 @@
         }
 
         .feature img {
-            max-width: min(80vw, 90%);
-            max-height: 60vh;
+            /*max-width: min(80vw, 90%);
+            max-height: 70vh;*/
+            width:85%;
+            height:85%;
             border-radius: 12px;
             box-shadow: 0 15px 50px rgba(0, 0, 0, .8);
             object-fit: contain;
@@ -542,7 +544,7 @@
 
         .caption {
             position: absolute;
-            bottom: 140px;
+            bottom: 104px;
             width: 60%;
             font-size: 22px;
             line-height: 1.5;
@@ -673,12 +675,12 @@
             transform: translateX(-50%);
             display: flex;
             gap: 20px;
-            z-index: 100;
+            z-index: 1000;
             align-items: center;
         }
 
         .nav-btn {
-            background: rgba(255, 255, 255, .2);
+            background: #2B2929;
             color: white;
             border: 2px solid rgba(255, 255, 255, .4);
             padding: 12px 18px;
@@ -690,7 +692,7 @@
         }
 
         .nav-btn:hover {
-            background: rgba(255, 255, 255, .3);
+            background: #2B2929;
             border-color: rgba(255, 255, 255, .8);
             transform: scale(1.1);
             box-shadow: 0 0 20px rgba(255, 255, 255, .3);
